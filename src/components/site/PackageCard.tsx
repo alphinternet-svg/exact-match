@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Check, Gauge } from "lucide-react";
+import { Check } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@/components/ui/dialog";
@@ -115,4 +115,3 @@ export function PackageGrid({ packages, campaigns }: { packages: InternetPackage
   );
 }
 
-export { Gauge };
