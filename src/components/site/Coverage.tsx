@@ -77,7 +77,7 @@ export function CoverageMap({ areas, className }: { areas: CoverageArea[]; class
       <div className="grid-lines absolute inset-0 opacity-60" />
       <svg viewBox="0 0 100 100" className="absolute inset-0 h-full w-full" aria-hidden>
         {areas.filter((a) => a.status === "active").map((a, i, arr) => {
-          const n = arr[(i + 1) % arr.length];
+          const n = arr[(i + 1) % arr.length]!;
           return <line key={a.id} x1={a.x} y1={a.y} x2={n.x} y2={n.y} stroke="var(--color-primary)" strokeOpacity={0.18} strokeWidth={0.3} />;
         })}
       </svg>
