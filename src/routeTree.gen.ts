@@ -10,18 +10,46 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as ConnectRouteImport } from './routes/connect'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CoverageRouteImport } from './routes/coverage'
+import { Route as LoginRouteImport } from './routes/login'
 import { Route as OffersRouteImport } from './routes/offers'
 import { Route as PackagesRouteImport } from './routes/packages'
+import { Route as PortalRouteImport } from './routes/portal'
+import { Route as SolutionsRouteImport } from './routes/solutions'
+import { Route as SupportRouteImport } from './routes/support'
+import { Route as LegalDocRouteImport } from './routes/legal.$doc'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ConnectRoute = ConnectRouteImport.update({
+  id: '/connect',
+  path: '/connect',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CoverageRoute = CoverageRouteImport.update({
   id: '/coverage',
   path: '/coverage',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
 const OffersRoute = OffersRouteImport.update({
@@ -34,39 +62,128 @@ const PackagesRoute = PackagesRouteImport.update({
   path: '/packages',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PortalRoute = PortalRouteImport.update({
+  id: '/portal',
+  path: '/portal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SolutionsRoute = SolutionsRouteImport.update({
+  id: '/solutions',
+  path: '/solutions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SupportRoute = SupportRouteImport.update({
+  id: '/support',
+  path: '/support',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LegalDocRoute = LegalDocRouteImport.update({
+  id: '/legal/$doc',
+  path: '/legal/$doc',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/connect': typeof ConnectRoute
+  '/contact': typeof ContactRoute
   '/coverage': typeof CoverageRoute
+  '/login': typeof LoginRoute
   '/offers': typeof OffersRoute
   '/packages': typeof PackagesRoute
+  '/portal': typeof PortalRoute
+  '/solutions': typeof SolutionsRoute
+  '/support': typeof SupportRoute
+  '/legal/$doc': typeof LegalDocRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/connect': typeof ConnectRoute
+  '/contact': typeof ContactRoute
   '/coverage': typeof CoverageRoute
+  '/login': typeof LoginRoute
   '/offers': typeof OffersRoute
   '/packages': typeof PackagesRoute
+  '/portal': typeof PortalRoute
+  '/solutions': typeof SolutionsRoute
+  '/support': typeof SupportRoute
+  '/legal/$doc': typeof LegalDocRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/connect': typeof ConnectRoute
+  '/contact': typeof ContactRoute
   '/coverage': typeof CoverageRoute
+  '/login': typeof LoginRoute
   '/offers': typeof OffersRoute
   '/packages': typeof PackagesRoute
+  '/portal': typeof PortalRoute
+  '/solutions': typeof SolutionsRoute
+  '/support': typeof SupportRoute
+  '/legal/$doc': typeof LegalDocRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/coverage' | '/offers' | '/packages'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/connect'
+    | '/contact'
+    | '/coverage'
+    | '/login'
+    | '/offers'
+    | '/packages'
+    | '/portal'
+    | '/solutions'
+    | '/support'
+    | '/legal/$doc'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/coverage' | '/offers' | '/packages'
-  id: '__root__' | '/' | '/coverage' | '/offers' | '/packages'
+  to:
+    | '/'
+    | '/about'
+    | '/connect'
+    | '/contact'
+    | '/coverage'
+    | '/login'
+    | '/offers'
+    | '/packages'
+    | '/portal'
+    | '/solutions'
+    | '/support'
+    | '/legal/$doc'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/connect'
+    | '/contact'
+    | '/coverage'
+    | '/login'
+    | '/offers'
+    | '/packages'
+    | '/portal'
+    | '/solutions'
+    | '/support'
+    | '/legal/$doc'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  ConnectRoute: typeof ConnectRoute
+  ContactRoute: typeof ContactRoute
   CoverageRoute: typeof CoverageRoute
+  LoginRoute: typeof LoginRoute
   OffersRoute: typeof OffersRoute
   PackagesRoute: typeof PackagesRoute
+  PortalRoute: typeof PortalRoute
+  SolutionsRoute: typeof SolutionsRoute
+  SupportRoute: typeof SupportRoute
+  LegalDocRoute: typeof LegalDocRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -78,11 +195,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/connect': {
+      id: '/connect'
+      path: '/connect'
+      fullPath: '/connect'
+      preLoaderRoute: typeof ConnectRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/coverage': {
       id: '/coverage'
       path: '/coverage'
       fullPath: '/coverage'
       preLoaderRoute: typeof CoverageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/offers': {
@@ -99,14 +244,50 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PackagesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/portal': {
+      id: '/portal'
+      path: '/portal'
+      fullPath: '/portal'
+      preLoaderRoute: typeof PortalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/solutions': {
+      id: '/solutions'
+      path: '/solutions'
+      fullPath: '/solutions'
+      preLoaderRoute: typeof SolutionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/support': {
+      id: '/support'
+      path: '/support'
+      fullPath: '/support'
+      preLoaderRoute: typeof SupportRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/legal/$doc': {
+      id: '/legal/$doc'
+      path: '/legal/$doc'
+      fullPath: '/legal/$doc'
+      preLoaderRoute: typeof LegalDocRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  ConnectRoute: ConnectRoute,
+  ContactRoute: ContactRoute,
   CoverageRoute: CoverageRoute,
+  LoginRoute: LoginRoute,
   OffersRoute: OffersRoute,
   PackagesRoute: PackagesRoute,
+  PortalRoute: PortalRoute,
+  SolutionsRoute: SolutionsRoute,
+  SupportRoute: SupportRoute,
+  LegalDocRoute: LegalDocRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

@@ -7,7 +7,7 @@ import { formatDate, formatSpeed } from "@/services/api";
 import type { Campaign, InternetPackage } from "@/types";
 import { cn } from "@/lib/utils";
 
-export function CampaignCard({ campaign, pkg, featured }: { campaign: Campaign; pkg?: InternetPackage; featured?: boolean }) {
+export function CampaignCard({ campaign, pkg, featured }: { campaign: Campaign; pkg?: InternetPackage | undefined; featured?: boolean }) {
   return (
     <article className={cn("surface-card relative overflow-hidden p-6 md:p-8", featured && "glow-accent md:p-12")}>
       <div className="bg-accent-wash absolute inset-0" />

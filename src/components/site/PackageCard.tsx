@@ -11,7 +11,7 @@ import { formatBDT, formatSpeed } from "@/services/api";
 import type { Campaign, InternetPackage, Segment } from "@/types";
 import { cn } from "@/lib/utils";
 
-export function PackageCard({ pkg, campaign, onDetails }: { pkg: InternetPackage; campaign?: Campaign; onDetails: () => void }) {
+export function PackageCard({ pkg, campaign, onDetails }: { pkg: InternetPackage; campaign?: Campaign | undefined; onDetails: () => void }) {
   return (
     <article className={cn("surface-card relative flex flex-col p-6 transition-all hover:-translate-y-0.5", pkg.popular && "glow-accent")}>
       <div className="flex min-h-6 flex-wrap gap-2">
@@ -47,7 +47,7 @@ export function PackageCard({ pkg, campaign, onDetails }: { pkg: InternetPackage
   );
 }
 
-export function PackageDetailsDialog({ pkg, campaign, onClose }: { pkg: InternetPackage | null; campaign?: Campaign; onClose: () => void }) {
+export function PackageDetailsDialog({ pkg, campaign, onClose }: { pkg: InternetPackage | null; campaign?: Campaign | undefined; onClose: () => void }) {
   return (
     <Dialog open={!!pkg} onOpenChange={(o) => !o && onClose()}>
       <DialogContent className="max-w-lg">

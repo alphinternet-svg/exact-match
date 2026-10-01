@@ -9,7 +9,7 @@ const tones: Record<Tone, string> = {
   accent: "border-primary/30 bg-primary/10 text-primary",
 };
 
-export function StatusBadge({ tone = "neutral", children, dot, className }: { tone?: Tone; children: React.ReactNode; dot?: boolean; className?: string }) {
+export function StatusBadge({ tone = "neutral", children, dot, className }: { tone?: Tone; children: React.ReactNode; dot?: boolean | undefined; className?: string }) {
   return (
     <span className={cn("inline-flex items-center gap-1.5 rounded-full border px-2.5 py-0.5 font-mono text-[0.68rem] font-medium uppercase tracking-wider", tones[tone], className)}>
       {dot && <span className="h-1.5 w-1.5 rounded-full bg-current animate-pulse-dot" />}
@@ -36,7 +36,7 @@ const statusMap: Record<string, { tone: Tone; label: string }> = {
   PENDING: { tone: "warning", label: "Pending" },
 };
 
-export function StatusPill({ status, dot }: { status: string; dot?: boolean }) {
+export function StatusPill({ status, dot }: { status: string; dot?: boolean | undefined }) {
   const s = statusMap[status] ?? { tone: "neutral" as Tone, label: status };
   return <StatusBadge tone={s.tone} dot={dot}>{s.label}</StatusBadge>;
 }
