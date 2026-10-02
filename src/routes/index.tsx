@@ -42,7 +42,7 @@ function Home() {
     <SiteLayout>
       {/* Hero */}
       <section className="relative -mt-16 overflow-hidden border-b pt-16">
-        <img src={heroImg} alt="" width={1920} height={1088} className="absolute inset-0 h-full w-full object-cover object-right opacity-90" />
+        <img src={heroImg} alt="" width={1920} height={1088} className="animate-fiber-drift absolute inset-0 h-full w-full object-cover object-right opacity-90" />
         <div className="bg-hero-fade absolute inset-0" />
         <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background to-transparent" />
         <div className="container-site relative flex min-h-[86vh] flex-col justify-center py-20">
@@ -51,11 +51,11 @@ function Home() {
               <span className="h-1.5 w-1.5 rounded-full bg-primary animate-pulse-dot" />
               Reliable Connectivity • Professional Support • Nationwide Coverage
             </div>
-            <h1 className="animate-reveal-up motion-delay-1 mt-7 text-5xl font-extrabold leading-[1.02] sm:text-6xl md:text-7xl lg:text-8xl">
-              Fast. Reliable.<br /><span className="text-primary">Nationwide.</span>
+            <h1 className="mt-7 text-5xl font-extrabold leading-[1.02] sm:text-6xl md:text-7xl lg:text-8xl">
+              <span className="animate-reveal-up motion-delay-1 block">Fast. Reliable.</span><span className="animate-reveal-up motion-delay-2 block text-primary">Nationwide.</span>
             </h1>
-            <p className="animate-reveal-up motion-delay-2 mt-6 max-w-xl text-lg text-muted-foreground md:text-xl">High-speed Internet solutions built for Home, SME and Corporate customers.</p>
-            <div className="animate-reveal-up motion-delay-3 mt-9 flex flex-wrap gap-3">
+            <p className="animate-reveal-up motion-delay-3 mt-6 max-w-xl text-lg text-muted-foreground md:text-xl">High-speed Internet solutions built for Home, SME and Corporate customers.</p>
+            <div className="animate-reveal-up motion-delay-4 mt-9 flex flex-wrap gap-3">
               <Button asChild size="lg" className="h-12 px-7 font-semibold"><Link to="/connect">Get Connected <ArrowRight className="h-4 w-4" /></Link></Button>
               <Button asChild size="lg" variant="outline" className="h-12 bg-background/40 px-7 backdrop-blur"><Link to="/packages">Explore Packages</Link></Button>
             </div>

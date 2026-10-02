@@ -158,12 +158,22 @@
   to { transform: translateX(110%); }
 }
 
+@keyframes fiber-drift {
+  0%, 100% { transform: scale(1.02) translate3d(0, 0, 0); }
+  50% { transform: scale(1.065) translate3d(-0.7%, -0.4%, 0); }
+}
+
 @utility animate-reveal-up {
   animation: reveal-up .8s cubic-bezier(.16, 1, .3, 1) both;
 }
 
 @utility animate-signal-sweep {
   animation: signal-sweep 7s ease-in-out infinite;
+}
+
+@utility animate-fiber-drift {
+  animation: fiber-drift 16s ease-in-out infinite;
+  will-change: transform;
 }
 
 @utility motion-delay-1 { animation-delay: 120ms; }
@@ -191,6 +201,7 @@
   .animate-rise,
   .animate-reveal-up,
   .animate-signal-sweep,
+  .animate-fiber-drift,
   .reveal-on-scroll {
     animation: none;
   }
