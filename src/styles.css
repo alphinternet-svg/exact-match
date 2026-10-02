@@ -147,3 +147,59 @@
 @utility animate-pulse-dot { animation: pulse-dot 2.4s ease-in-out infinite; }
 @keyframes rise { from { opacity: 0; transform: translateY(12px);} to { opacity: 1; transform: none; } }
 @utility animate-rise { animation: rise .7s cubic-bezier(.2,.7,.2,1) both; }
+
+@keyframes reveal-up {
+  from { opacity: 0; transform: translateY(1.5rem); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes signal-sweep {
+  from { transform: translateX(-110%); }
+  to { transform: translateX(110%); }
+}
+
+@utility animate-reveal-up {
+  animation: reveal-up .8s cubic-bezier(.16, 1, .3, 1) both;
+}
+
+@utility animate-signal-sweep {
+  animation: signal-sweep 7s ease-in-out infinite;
+}
+
+@utility motion-delay-1 { animation-delay: 120ms; }
+@utility motion-delay-2 { animation-delay: 240ms; }
+@utility motion-delay-3 { animation-delay: 360ms; }
+@utility motion-delay-4 { animation-delay: 520ms; }
+
+@utility reveal-on-scroll {
+  animation: reveal-up .7s cubic-bezier(.16, 1, .3, 1) both;
+  animation-timeline: view();
+  animation-range: entry 5% cover 24%;
+}
+
+@utility motion-card {
+  transition: transform 300ms cubic-bezier(.16, 1, .3, 1), border-color 300ms ease, box-shadow 300ms ease;
+  &:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in oklab, var(--primary) 28%, var(--border));
+    box-shadow: 0 18px 42px -28px color-mix(in oklab, var(--primary) 55%, transparent);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-pulse-dot,
+  .animate-rise,
+  .animate-reveal-up,
+  .animate-signal-sweep,
+  .reveal-on-scroll {
+    animation: none;
+  }
+
+  .motion-card {
+    transition: none;
+  }
+
+  .motion-card:hover {
+    transform: none;
+  }
+}

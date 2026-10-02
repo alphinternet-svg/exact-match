@@ -6,9 +6,9 @@ import type { Segment } from "@/types";
 type S = { package?: string; type?: Segment; area?: string };
 export const Route = createFileRoute("/connect")({
   validateSearch: (s: Record<string, unknown>): S => ({
-    ...(typeof s.package === "string" ? { package: s.package } : {}),
-    ...(s.type === "home" || s.type === "sme" || s.type === "corporate" ? { type: s.type } : {}),
-    ...(typeof s.area === "string" ? { area: s.area } : {}),
+    ...(typeof s["package"] === "string" ? { package: s["package"] } : {}),
+    ...(s["type"] === "home" || s["type"] === "sme" || s["type"] === "corporate" ? { type: s["type"] } : {}),
+    ...(typeof s["area"] === "string" ? { area: s["area"] } : {}),
   }),
   head: () => ({ meta: [{ title: "Get Connected — ALPHINTERNET" }, { name: "description", content: "Request a new ALPHINTERNET connection." }, { property: "og:title", content: "Get Connected — ALPHINTERNET" }, { property: "og:description", content: "Request a new ALPHINTERNET connection." }] }),
   component: Page,
